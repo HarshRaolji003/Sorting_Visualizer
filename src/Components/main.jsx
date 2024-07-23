@@ -35,7 +35,7 @@ export default function main() {
 
     // generating steps 
     const generateStep = () => {
-        console.log('generating steps:');
+        // console.log('generating steps:');
         const arr = [...array];
         const steps = [array.slice()];
         const clrsteps = [...colorSteps];

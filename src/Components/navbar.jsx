@@ -70,15 +70,6 @@ export default function navbar(props) {
               </option>
              ))
              } 
-              {/* <option value="Quick Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
-                  Quick Sort
-              </option>
-              <option value="Insertion Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
-                  Insertion Sort
-              </option>
-              <option value="Selection Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
-                  Selection Sort
-              </option> */}
           </select>
        
         </div>
