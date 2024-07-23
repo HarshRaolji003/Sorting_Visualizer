@@ -64,10 +64,13 @@ export default function navbar(props) {
             defaultValue={props.algorithm}
             onChange={selectAlgorithm}
             className='ml-2 cursor-pointer capitalize bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'>
-              <option value="Merge Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
-                  Merge Sort
+             {items.map(({id,title})=>(
+              <option key={id} value={title} className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
+                  {title}
               </option>
-              <option value="Quick Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
+             ))
+             } 
+              {/* <option value="Quick Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
                   Quick Sort
               </option>
               <option value="Insertion Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
@@ -75,7 +78,7 @@ export default function navbar(props) {
               </option>
               <option value="Selection Sort" className='p-4 m-2 font-medium cursor-pointer text-lg capitalize'>
                   Selection Sort
-              </option>
+              </option> */}
           </select>
        
         </div>

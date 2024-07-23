@@ -47,9 +47,9 @@ export default function main() {
 
     // algorithm selection
     const sort = (array, steps, colorsteps) => {
-        console.log(`Algorithm: ${algorithm}`);
-        console.log(`Array Steps: ${steps}`);
-        console.log(`color Steps: ${colorSteps}`);
+        // console.log(`Algorithm: ${algorithm}`);
+        // console.log(`Array Steps: ${steps}`);
+        // console.log(`color Steps: ${colorSteps}`);
 
         switch (algorithm) {
             case "Merge Sort":
@@ -108,7 +108,7 @@ export default function main() {
     const clearTimeouts = () => {
         timeouts.forEach((timeout) => clearTimeout(timeout));
         setTimeouts([]);
-        console.log("Timeouts cleared....");
+        // console.log("Timeouts cleared....");
     }
 
 
@@ -127,12 +127,11 @@ export default function main() {
             }, delay * (i + 1));
             timeoutsArray.push(timeout);
         }
-        console.log(`setting tiemeoutout`);
+        // console.log(`setting tiemeoutout`);
         setTimeouts(timeoutsArray);
     };
 
     // returns the bar width according to the arraysize
-    // formula: width = 750/arraySize
     const getBarWidth = () => {
         return Math.floor(800 / arraySize);
     };
@@ -185,7 +184,6 @@ export default function main() {
                         algorithm={algorithm}
                         setAlgorithm={setAlgorithm}
                         setStartGeneratingSteps={setStartGeneratingSteps}
-                    // handleArraySizeandSpeed={handleArraySizeandSpeed}
                     />
                 </div>
                 <div className='mx-3 text-white flex flex-row justify-center'>

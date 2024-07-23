@@ -9,7 +9,7 @@ export const items = [
     },
     {
       id: 3,
-      title: "Bubble Sort"
+      title: "Selection Sort"
     },
     {
       id: 4,
