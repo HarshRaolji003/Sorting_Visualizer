@@ -150,14 +150,6 @@ export default function main() {
         );
     });
 
-    const pause = ()=>{
-        const puasedStep = currentStep;
-        clearTimeouts();
-        setCurrentStep(puasedStep);
-        setArray(arrSteps[puasedStep]);
-    }
-
-
     // when the document loads, initialize with new Array
     useEffect(() => {
         initialize();
