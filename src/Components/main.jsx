@@ -6,6 +6,7 @@ import Bar from './Bar'
 // import { DataContext } from '../Context/context';
 // algorithm
 import mergeSort from '../algorithm/MergeSort/MergeSort';
+import QuickSort from '../algorithm/QuickSort/QuickSort';
 
 export default function main() {
     // states
@@ -29,7 +30,7 @@ export default function main() {
     };
 
     const clearKey = () => {
-        let blankkey =new Array(arraySize).fill(0); 
+        let blankkey = new Array(arraySize).fill(0);
         setColorSteps([blankkey]);
     };
 
@@ -56,7 +57,8 @@ export default function main() {
                 mergeSort(array, steps, colorsteps);
                 break;
             case "Quick Sort":
-                alert("working on it ....");
+                QuickSort(array, steps, colorsteps);
+                // alert("working on it ....");
                 break;
             case "Insertion Sort":
                 alert("working on it ....");
@@ -98,8 +100,8 @@ export default function main() {
         setStartGeneratingSteps(true);
     }
 
-    const handleArraySizeandSpeed=(newArraySize)=>{
-        const newDely=getDelay(newArraySize);
+    const handleArraySizeandSpeed = (newArraySize) => {
+        const newDely = getDelay(newArraySize);
         setArraySize(newArraySize);
         setDelay(newDely);
     }
