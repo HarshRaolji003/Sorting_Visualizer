@@ -19,6 +19,21 @@ export default function main() {
     const [algorithm, setAlgorithm] = useState("Merge Sort");
     const [timeouts, setTimeouts] = useState([]);
     const [startGeneratingSteps, setStartGeneratingSteps] = useState(false);
+    const [customArray, setCustomArray] = useState('');
+
+    const handleCustomArrayInput = (e)=>{
+        setCustomArray(e.target.value);
+    }
+
+    const applyCustomArray = () => {
+        const array = customArray.split(',').map(Number);
+        if (array.every(num => !isNaN(num))) {
+            initialize(array);
+        } else {
+            alert('Please enter a valid array (comma-separated numbers)');
+        }
+    };
+    
 
     // return an array of n number; n=arrsize
     const generateRandomArray = () => {
@@ -71,24 +86,23 @@ export default function main() {
         }
     };
 
-
-
     //  sorting algorithm delay speed using formula 
     const getDelay = (arraySize) => {
         return Math.floor(1000 / arraySize)
     }
 
     // Initialize by generating random array
-    const initialize = () => {
-        const newArray = generateRandomArray();
+    const initialize = (customArray = null) => {
+        const newArray = customArray || generateRandomArray();
         setArray(newArray);
         setArrSteps([newArray]);
         setCurrentStep(0);
-        setDelay(getDelay(arraySize));
+        setDelay(getDelay(newArray.length));  // Update delay based on array size
         clearKey();
         clearTimeouts();
         setStartGeneratingSteps(true);
     };
+    
 
     const changeAlgo = () => {
         const arrayCopy = array.slice();
@@ -176,6 +190,21 @@ export default function main() {
                 <h1 className='text-center text-5xl bg-purple-900 p-4 text-white font-bold'>
                     Sorting Visualizer
                 </h1>
+                <div className='flex flex-col items-center my-4'>
+                    <input
+                        type='text'
+                        value={customArray}
+                        onChange={handleCustomArrayInput}
+                        placeholder='Enter custom array (e.g., 5,3,8,1)'
+                        className='p-2 border-2 border-purple-900 rounded mb-2'
+                    />
+                    <button
+                        onClick={applyCustomArray}
+                        className='bg-purple-700 text-white py-2 px-4 rounded hover:bg-purple-800'
+                    >
+                        Apply Custom Array
+                    </button>
+                </div>
                 <div>
                     <Navbar
                         currentStep={currentStep}
@@ -191,8 +220,8 @@ export default function main() {
                 <div className='mx-3 text-white flex flex-row justify-center'>
                     {bar}
                 </div>
-
             </div>
         </>
     );
+    
 }
