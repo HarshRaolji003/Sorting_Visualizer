@@ -78,7 +78,7 @@ export default function navbar(props) {
         <div className='grid place-content-center'>
           <button
             onClick={handleSorting}
-            className='w-20 font-semibold cursor-pointer text-lg text-white bg-gray-700 rounded-lg p-3 hover:bg-gray-600'>
+            className='w-20 font-medium cursor-pointer text-lg text-white  rounded-lg p-3 hover:bg-gray-600'>
             Sort!
           </button>
         </div>

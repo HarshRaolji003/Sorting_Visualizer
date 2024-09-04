@@ -21,6 +21,7 @@ export default function main() {
     const [startGeneratingSteps, setStartGeneratingSteps] = useState(false);
     const [customArray, setCustomArray] = useState('');
 
+    // handle custom input
     const handleCustomArrayInput = (e)=>{
         setCustomArray(e.target.value);
     }
@@ -73,13 +74,6 @@ export default function main() {
                 break;
             case "Quick Sort":
                 QuickSort(array, steps, colorsteps);
-                // alert("working on it ....");
-                break;
-            case "Insertion Sort":
-                alert("working on it ....");
-                break;
-            case "Selection Sort":
-                alert("working on it ....");
                 break;
             default:
                 console.error("working on it");
@@ -190,19 +184,19 @@ export default function main() {
                 <h1 className='text-center text-5xl bg-purple-900 p-4 text-white font-bold'>
                     Sorting Visualizer
                 </h1>
-                <div className='flex flex-col items-center my-4'>
+                <div className='flex space-x-1 justify-center items-center bg-purple-900'>
                     <input
                         type='text'
                         value={customArray}
                         onChange={handleCustomArrayInput}
                         placeholder='Enter custom array (e.g., 5,3,8,1)'
-                        className='p-2 border-2 border-purple-900 rounded mb-2'
+                        className='p-2 border outline-none border-purple-900 rounded'
                     />
                     <button
                         onClick={applyCustomArray}
-                        className='bg-purple-700 text-white py-2 px-4 rounded hover:bg-purple-800'
+                        className='text-white font-medium w-fit h-fit p-2 rounded-lg bg-gray-700 hover:bg-gray-600'
                     >
-                        Apply Custom Array
+                        Apply
                     </button>
                 </div>
                 <div>
