@@ -11,13 +11,10 @@ export default function navbar(props) {
 
   const generateRandomNumber = () => {
     props.generateArray();
-    // alert(`Array: ${value.array}`);
   };
 
   const selectAlgorithm = (e)=>{
-    // console.log(`${value.algorithm}`);
     props.setAlgorithm(e.target.value);
-    // alert(`${value.algorithm}`);
   };
 
   // Starts the sorting

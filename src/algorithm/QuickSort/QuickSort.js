@@ -19,7 +19,6 @@ const QuickSort = (array, arraySteps, colorSteps) => {
 	globalColorSteps = colorSteps;
 	globalColorKey = [...globalColorSteps[0]];
 	quickSortHelper(0, array.length - 1);
-	console.log(`sorted array: ${globalArray}`);
 };
 
 // Returns a random pivot index in range [startIndex, endIndex]
